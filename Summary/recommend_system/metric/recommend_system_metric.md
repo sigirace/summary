@@ -75,9 +75,71 @@ Decision support metric은 아래 세가지가 있으며 이들은 추천인이 
 
 #### 4.1.2 Example
 
+아래 예시의 경우 사용자 1의 경우 relevant한 item이 추천 리스트 중 3번째에 처음 있었기 때문에 1/3, 사용자 2의 경우 추천 리스트 중 2번째에 처음 있었기에 1/2, 사용자 3의 경우 추천 리스트 중 1번째에 있었기에 1로 계산할 수 있다. 이후 이에대한 평균을 구하면 metric 결과는 0.61이 된다.
 
+<img src="https://miro.medium.com/max/643/1*dR24Drmb9J5BLZp8ffjOGA.png" width="500">
 
+#### 4.1.3 MRR Advantages
 
+- 계산하기 쉽고 해석하기 쉽다.
 
+- 첫 번째 관련 요소에 높은 초점을 맞추고 있기에 "나에게 가장 적합한 항목" 인 추천 task 적합하다.
 
+- 탐색 쿼리 또는 팩트 검색과 같은 알려진 항목 검색에 적합하다.
 
+#### 4.1.4 MRR Disadvantages
+
+- 첫번째 관심 아이템을 제외한 나머지를 평가하지 않는다.
+- 아이템의 리스트를 검색하려는 사용자에게 적합한 metric이 아닐 수 있다.
+
+### 4.2 MAP
+
+Next is the MAP metric. Let’s say we have a binary relevance data set. 
+
+We want to evaluate the whole list of recommended items up to a specific cut-off N. 
+
+This cut-off was previously incorporated using the Precision@N metric. 
+
+The P@N decision support metric calculates the fraction of n recommendations that are good.
+
+The drawback of this metric is that it does not consider the recommended list as an ordered list.
+
+P@N considers the whole list as a set of items, and treats all the errors in the recommended list equally.
+
+우리는 특정 컷오프 N까지 추천 품목의 전체 목록을 평가하고 싶다. 
+
+이 컷오프는 이전에 Precision@N 메트릭을 사용하여 통합되었습니다. 
+
+P@N 의사 결정 지원 메트릭은 좋은 n개의 권장 사항 중 일부를 계산합니다.
+
+이 메트릭의 단점은 권장 목록을 순서 목록으로 간주하지 않는다는 것입니다.
+
+P@N은 전체 목록을 항목 집합으로 간주하고 권장 목록의 모든 오류를 동일하게 처리합니다.
+
+The goal is to cut the error in the first few elements rather than much later in the list. 
+
+For this, we need a metric that weights the errors accordingly. 
+
+The goal is to weight heavily the errors at the top of the list. 
+
+Then gradually decrease the significance of the errors as we go down the lower items in a list.
+
+목표는 목록에서 나중에 오류를 줄이는 것보다 처음 몇 가지 요소에서 오류를 줄이는 것입니다. 
+
+이를 위해, 우리는 그에 따라 오류의 가중치를 부여하는 메트릭이 필요하다. 
+
+목표는 목록의 맨 위에 있는 오류를 무겁게 평가하는 것이다. 
+
+그런 다음 목록에서 하위 항목으로 내려갈수록 오류의 중요도를 점차 낮춥니다.
+
+The Average Prediction (AP) metric tries to approximate this weighting sliding scale.
+
+It uses a combination of the precision at successive sub-lists, combined with the change in recall in these sub-lists.
+
+The calculation goes as follows:
+
+평균 예측(AP) 메트릭은 이 가중치 슬라이딩 스케일을 근사화하려고 한다.
+
+연속된 하위 목록의 정밀도와 이러한 하위 목록의 리콜 변경을 결합하여 사용합니다.
+
+계산은 다음과 같습니다:
