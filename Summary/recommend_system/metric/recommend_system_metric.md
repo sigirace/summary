@@ -108,7 +108,7 @@ P@N considers the whole list as a set of items, and treats all the errors in the
 
 우리는 특정 컷오프 N까지 추천 품목의 전체 목록을 평가하고 싶다. 
 
-이 컷오프는 이전에 Precision@N 메트릭을 사용하여 통합되었습니다. 
+이 컷오프는 이전에 Precision@N 메트릭을 사용하여 통합되었습니다.  ㅋ
 
 P@N 의사 결정 지원 메트릭은 좋은 n개의 권장 사항 중 일부를 계산합니다.
 
