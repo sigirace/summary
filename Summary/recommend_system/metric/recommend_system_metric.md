@@ -2,11 +2,12 @@
 layout: single
 title:  '추천시스템 Metric'
 toc: true
-categories: recommender_system
+categories: Recommender System
 tags: [metric, MAP, MRR, NDCG]
+
 ---
 
-본 게시물은 추천시스템에 대한 평가 지표에 대해 [해당 포스트](https://medium.com/swlh/rank-aware-recsys-evaluation-metrics-5191bba16832)를 읽고 정리하는 글입니다. {: .notice--primary}
+본 게시물은 추천시스템에 대한 평가 지표에 대해 [해당 포스트](https://medium.com/swlh/rank-aware-recsys-evaluation-metrics-5191bba16832)를 읽고 정리하는 글이다.
 
 ## 1. Introduction ##
 
@@ -94,7 +95,7 @@ Decision support metric은 아래 세가지가 있으며 이들은 추천인이 
 
 ### 4.2 MAP
 
-이전에 살펴본 Precision@N과 같은 Top-N metric은 추천 목록을 평가하나 순서를 간주하지 않는다는 단점이 있다. 즉, 전체 목록을 하나의 아이템 집합으로 간주하고, 모든 추천 항목의 오차를 모두 동등하게 계산한다. 이를 개선하기 위해 오류에 가중치를 부여하는 metric이 필요하다. 이는 앞서 확인한 바와 같이 추천 순위를 고려하여 추천 항목 중 앞쪽에 위치한 오차들에는 큰 가중치를 부여하고 하위 아이템으로 내려갈수록 오차의 중요도를 점차 낮춤으로 구현할 수 있다. 
+​	이전에 살펴본 Precision@N과 같은 Top-N metric은 추천 목록을 평가하나 순서를 간주하지 않는다는 단점이 있다. 즉, 전체 목록을 하나의 아이템 집합으로 간주하고, 모든 추천 항목의 오차를 모두 동등하게 계산한다. 이를 개선하기 위해 오류에 가중치를 부여하는 metric이 필요하다. 이는 앞서 확인한 바와 같이 추천 순위를 고려하여 추천 항목 중 앞쪽에 위치한 오차들에는 큰 가중치를 부여하고 하위 아이템으로 내려갈수록 오차의 중요도를 점차 낮춤으로 구현할 수 있다. 
 
 #### 4.2.1 Algorithm
 
