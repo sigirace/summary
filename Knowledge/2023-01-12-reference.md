@@ -1,9 +1,9 @@
 ---
 layout: single
-title:  'knowledge'
+title:  'Reference'
 toc: true
 categories: Develope Knowledge
-tags: [github.io, markdown]
+tags: [github.io, markdown, machine learning, deep learning, statistics]
 ---
 
 ## 1. Github Page
